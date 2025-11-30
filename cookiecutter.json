@@ -1,0 +1,11 @@
+{
+  "project_name": "My New Project",
+  "project_slug": "my-new-project",
+  "project_short_description": "Short description of this project.",
+  "github_username": "your-github-username",
+  "author_name": "Your Name",
+  "python_version": "3.11",
+  "_copy_without_render": [
+    ".gitignore"
+  ]
+}
