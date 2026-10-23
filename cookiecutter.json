@@ -2,8 +2,13 @@
   "project_name": "My New Project",
   "project_slug": "my-new-project",
   "project_short_description": "Short description of this project.",
-  "github_username": "your-github-username",
-  "author_name": "Your Name",
+  "github_username": "Laura-Ellis",
+  "author_name": "Laura Ellis",
+  "author_given_names": "Laura",
+  "author_family_names": "Ellis",
+  "orcid": "",
+  "portfolio_url": "https://laura-ellis.github.io",
+  "year": "2026",
   "python_version": "3.11",
   "_copy_without_render": [
     ".gitignore"

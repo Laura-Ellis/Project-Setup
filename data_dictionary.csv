@@ -1,0 +1,2 @@
+dataset,column,type,description,units_or_values,source,example,notes
+grants,appl_id,integer,NIH application ID; unique per grant application,,NIH RePORTER API,10012345,EXAMPLE ROW: replace with your own; primary key

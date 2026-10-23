@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code or analysis, please cite it as below."
+title: "{{cookiecutter.project_name}}"
+abstract: "{{cookiecutter.project_short_description}}"
+type: software
+authors:
+  - given-names: "{{cookiecutter.author_given_names}}"
+    family-names: "{{cookiecutter.author_family_names}}"
+{% if cookiecutter.orcid %}    orcid: "https://orcid.org/{{cookiecutter.orcid}}"
+{% endif %}repository-code: "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}"
+url: "{{cookiecutter.portfolio_url}}"
+license: MIT
+version: "0.1.0"
+date-released: "{{cookiecutter.year}}-01-01"
+keywords:
+  - data science
