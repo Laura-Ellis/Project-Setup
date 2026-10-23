@@ -1,6 +1,3 @@
-$reqTemplatePath = Join-Path $projectRoot "requirements.template.txt"
-if (!(Test-Path $reqTemplatePath)) {
-    @'
 #######################################
 # REQUIREMENTS TEMPLATE
 #######################################
@@ -39,8 +36,3 @@ openpyxl
 # bokeh
 # altair
 # gensim
-'@ | Set-Content -Path $reqTemplatePath -Encoding UTF8
-    Write-Host "Created requirements.template.txt"
-} else {
-    Write-Host "requirements.template.txt already exists, skipping."
-}

@@ -1,6 +1,3 @@
-$tasksPath = Join-Path $projectRoot "tasks.py"
-if (!(Test-Path $tasksPath)) {
-    @'
 """
 Simple project task runner (Windows-friendly, no Anaconda).
 
@@ -41,7 +38,8 @@ def task_create_venv(args):
     _run([sys.executable, "-m", "venv", str(VENV_DIR)])
     print("Virtual environment created!")
     print("Activate with:")
-    print(r".venv\Scripts\Activate")
+    print(r"  Windows (PowerShell): .venv\Scripts\Activate")
+    print("  macOS / Linux:        source .venv/bin/activate")
 
 
 def task_install(args):
@@ -52,8 +50,11 @@ def task_install(args):
     _run([str(pip), "install", "--upgrade", "pip"])
     if Path("requirements.txt").exists():
         _run([str(pip), "install", "-r", "requirements.txt"])
+    elif Path("requirements.template.txt").exists():
+        print("requirements.txt not found; installing from requirements.template.txt")
+        _run([str(pip), "install", "-r", "requirements.template.txt"])
     else:
-        print("requirements.txt not found")
+        print("No requirements file found")
 
 
 def task_freeze(args):
@@ -94,8 +95,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-'@ | Set-Content -Path $tasksPath -Encoding UTF8
-    Write-Host "Created tasks.py"
-} else {
-    Write-Host "tasks.py already exists, skipping."
-}

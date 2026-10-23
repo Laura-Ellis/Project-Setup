@@ -1,6 +1,3 @@
-$colorsPath = Join-Path $projectRoot "config\colors.py"
-if (!(Test-Path $colorsPath)) {
-    @'
 # Categorical palette (21 colors)
 CATEGORICAL_PALETTE = [
     "#3A6782", "#E97216", "#A13A7E", "#43A287", "#795D25",
@@ -28,8 +25,3 @@ CATEGORY_COLORS = {
 
 def get_category_color(name: str, default: str = "#949494") -> str:
     return CATEGORY_COLORS.get(name, default)
-'@ | Set-Content -Path $colorsPath -Encoding UTF8
-    Write-Host "Created config/colors.py"
-} else {
-    Write-Host "config/colors.py already exists, skipping."
-}
